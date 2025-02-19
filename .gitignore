@@ -1,0 +1,20 @@
+# Archivos binarios y temporales
+*.amx
+*.log
+*.so
+*.dll
+*.bak
+/server_log.txt
+
+# Plugins y dependencias
+/plugins/*.dll
+/plugins/*.so
+
+# Configuraciones sensibles
+/config.ini
+/scriptfiles/*.db
+/database/passwords.txt
+
+# Carpetas generadas automáticamente
+/logs/
+/build/
