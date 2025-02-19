@@ -1,0 +1,26 @@
+name: Compilar Gamemode
+
+on: [push, pull_request] # Se activa en push o PR
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Sistema operativo
+
+    steps:
+      # Paso 1: Descargar el código
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      # Paso 2: Compilar el gamemode
+      - name: Compilar con Pawn
+        uses: Southclaws/pawn-action@v1
+        with:
+          input: gamemodes/RL.pwn # Ruta del script
+          args: "-;+ -d3" # Argumentos del compilador
+
+      # Paso 3: Subir el .amx como artefacto
+      - name: Subir Artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: RL.amx
+          path: gamemodes/RL.amx
