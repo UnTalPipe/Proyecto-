@@ -1,0 +1,7 @@
+para auth falta una tabla de cuentas tiene que tener estas columnas:
+CREATE TABLE cuentas (
+    nombre VARCHAR(24) PRIMARY KEY,
+    password VARCHAR(60),  // Longitud para bcrypt
+    admin_level INT DEFAULT 0,
+    session_id INT
+);
